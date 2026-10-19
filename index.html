@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Folder URLs need a trailing slash or ./assets resolves against the parent.
+      (function () {
+        var path = location.pathname;
+        var leaf = path.slice(path.lastIndexOf("/") + 1);
+        if (leaf && leaf.indexOf(".") === -1) {
+          location.replace(path + "/" + location.search + location.hash);
+          return;
+        }
+        document.write("\u003clink rel=\"manifest\" href=\"./manifest.webmanifest\" />");document.write("\u003clink rel=\"icon\" href=\"./icon-192.png\" />");document.write("\u003clink rel=\"apple-touch-icon\" href=\"./icon-192.png\" />");document.write("\u003cscript type=\"module\" crossorigin src=\"./assets/index-Cvt0v7Ku.js\">\u003c/script>");document.write("\u003clink rel=\"stylesheet\" crossorigin href=\"./assets/index-BCN70Ifa.css\">");
+      })();
+    </script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#12080c" />
+    <meta name="description" content="Street Scalper II — a free arcade fighter about the release-day line. A Peak Hobby game." />
+    <title>STREET SCALPER II</title>
+    
+    
+    
+    
+    
+  </head>
+  <body>
+    <div id="app">
+      <div id="chrome">
+        <div id="top-ui">
+          <button type="button" id="btn-mute">SOUND</button>
+          <button type="button" id="btn-full">FULL</button>
+          <button type="button" id="btn-pause" hidden>PAUSE</button>
+          <button type="button" id="btn-easy">EASY OFF</button>
+        </div>
+        <a id="donate" href="#" target="_blank" rel="noopener noreferrer">Optional: Tip $5 via PayPal</a>
+      </div>
+      <section id="fight-hud" hidden>
+        <div class="hud-side">
+          <canvas class="bust" id="bust-p1" width="80" height="96"></canvas>
+          <div class="hud-read">
+            <div class="hud-name" id="name-p1"></div>
+            <div class="hud-hp"><span id="hp-p1"></span></div>
+            <div class="hud-me"><span id="me-p1"></span></div>
+            <div class="hud-pips" id="pips-p1"></div>
+          </div>
+        </div>
+        <div class="hud-mid">
+          <div id="hud-timer">99</div>
+          <div id="hud-combo"></div>
+          <div id="hud-banner"></div>
+        </div>
+        <div class="hud-side hud-right">
+          <div class="hud-read">
+            <div class="hud-name" id="name-p2"></div>
+            <div class="hud-hp flip"><span id="hp-p2"></span></div>
+            <div class="hud-me flip"><span id="me-p2"></span></div>
+            <div class="hud-pips right" id="pips-p2"></div>
+          </div>
+          <canvas class="bust" id="bust-p2" width="80" height="96"></canvas>
+        </div>
+      </section>
+      <div id="stage-wrap">
+        <canvas id="game" width="384" height="224"></canvas>
+      </div>
+      <div id="touch" hidden>
+        <div class="cab-plate">STREET SCALPER II</div>
+        <p class="cab-help">Roll the stick, then punch or kick. Easy specials sit above the six buttons.</p>
+        <div class="cab-row">
+          <div class="stick-well">
+            <div id="stick" aria-label="Joystick">
+              <div id="knob"></div>
+            </div>
+          </div>
+          <div id="pad-col">
+            <div id="easy-row" hidden>
+              <button type="button" data-e="s1">S1</button>
+              <button type="button" data-e="s2">S2</button>
+              <button type="button" data-e="s3">S3</button>
+              <button type="button" data-e="super">SUP</button>
+            </div>
+            <div id="pad">
+              <button type="button" data-b="lp">LP</button>
+              <button type="button" data-b="mp">MP</button>
+              <button type="button" data-b="hp">HP</button>
+              <button type="button" data-b="lk">LK</button>
+              <button type="button" data-b="mk">MK</button>
+              <button type="button" data-b="hk">HK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pause-sheet" hidden>
+        <p>PAUSED</p>
+        <button type="button" data-p="0">RESUME</button>
+        <button type="button" data-p="1">HOW TO PLAY</button>
+        <button type="button" data-p="2">EASY SPECIALS</button>
+        <button type="button" data-p="3">SOUND</button>
+        <button type="button" data-p="4">QUIT TO TITLE</button>
+      </div>
+    </div>
+  </body>
+</html>
