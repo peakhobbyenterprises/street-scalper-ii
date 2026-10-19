@@ -11,7 +11,7 @@
           location.replace(path + "/" + location.search + location.hash);
           return;
         }
-        document.write("\u003clink rel=\"manifest\" href=\"./manifest.webmanifest\" />");document.write("\u003clink rel=\"icon\" href=\"./icon-192.png\" />");document.write("\u003clink rel=\"apple-touch-icon\" href=\"./icon-192.png\" />");document.write("\u003cscript type=\"module\" crossorigin src=\"./assets/index-C766ZI8u.js\">\u003c/script>");document.write("\u003clink rel=\"stylesheet\" crossorigin href=\"./assets/index-C-7j7wko.css\">");
+        document.write("\u003clink rel=\"manifest\" href=\"./manifest.webmanifest\" />");document.write("\u003clink rel=\"icon\" href=\"./icon-192.png\" />");document.write("\u003clink rel=\"apple-touch-icon\" href=\"./icon-192.png\" />");document.write("\u003cscript type=\"module\" crossorigin src=\"./assets/index-BOR7_RQV.js\">\u003c/script>");document.write("\u003clink rel=\"stylesheet\" crossorigin href=\"./assets/index-DK5-mR9-.css\">");
       })();
     </script>
     <meta
@@ -70,29 +70,42 @@
         <canvas id="game" width="384" height="224"></canvas>
       </div>
       <div id="touch" hidden>
-        <div class="cab-plate">STREET SCALPER II</div>
-        <p class="cab-help">Roll the stick, then punch or kick. Easy specials sit above the six buttons.</p>
+        <div id="easy-row">
+          <button type="button" data-e="s1"><span class="btn-k">SPECIAL 1</span><span class="btn-s" id="mv-s1"></span></button>
+          <button type="button" data-e="s2"><span class="btn-k">SPECIAL 2</span><span class="btn-s" id="mv-s2"></span></button>
+          <button type="button" data-e="s3"><span class="btn-k">SPECIAL 3</span><span class="btn-s" id="mv-s3"></span></button>
+          <button type="button" data-e="super" id="btn-super"><span class="btn-k">SUPER</span><span class="btn-s" id="mv-super"></span><i id="super-meter"></i></button>
+        </div>
         <div class="cab-row">
           <div class="stick-well">
-            <div id="stick" aria-label="Joystick">
+            <span class="stick-tag up">↑ JUMP</span>
+            <span class="stick-tag side">← MOVE →</span>
+            <div id="stick" aria-label="Joystick. Up jumps, down crouches, sideways moves. Hold back to block.">
               <div id="knob"></div>
             </div>
+            <span class="stick-tag down">↓ CROUCH</span>
+            <button type="button" id="btn-block" data-b="block">BLOCK</button>
           </div>
           <div id="pad-col">
-            <div id="easy-row" hidden>
-              <button type="button" data-e="s1">S1</button>
-              <button type="button" data-e="s2">S2</button>
-              <button type="button" data-e="s3">S3</button>
-              <button type="button" data-e="super">SUP</button>
-            </div>
             <div id="pad">
-              <button type="button" data-b="lp">LP</button>
-              <button type="button" data-b="mp">MP</button>
-              <button type="button" data-b="hp">HP</button>
-              <button type="button" data-b="lk">LK</button>
-              <button type="button" data-b="mk">MK</button>
-              <button type="button" data-b="hk">HK</button>
+              <button type="button" data-b="lp">JAB</button>
+              <button type="button" data-b="mp">PUNCH</button>
+              <button type="button" data-b="hp">BIG PUNCH</button>
+              <button type="button" data-b="lk">QUICK KICK</button>
+              <button type="button" data-b="mk">KICK</button>
+              <button type="button" data-b="hk">BIG KICK</button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div id="tutor" hidden>
+        <div class="tutor-card">
+          <p id="tutor-kicker">FIRST FIGHT</p>
+          <h2 id="tutor-title">MOVE</h2>
+          <p id="tutor-body">Push the stick. Up jumps, down crouches, sideways walks. Hold back, or press BLOCK.</p>
+          <div class="tutor-actions">
+            <button type="button" id="tutor-skip">SKIP</button>
+            <button type="button" id="tutor-next">NEXT</button>
           </div>
         </div>
       </div>
